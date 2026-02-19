@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Tokens Demo</title>
+  <link rel="stylesheet" href="dist/tokens.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 2rem;
+      background: var(--color-neutral-50);
+      color: var(--color-neutral-900);
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section h2 {
+      font-size: var(--typography-h3-fontSize);
+      font-weight: var(--typography-h3-fontWeight);
+      margin-bottom: 1.5rem;
+    }
+
+    .subsection {
+      margin-bottom: 2rem;
+    }
+
+    .subsection h3 {
+      font-size: var(--typography-title-fontSize);
+      font-weight: var(--typography-title-fontWeight);
+      margin-bottom: 1rem;
+      color: var(--color-neutral-600);
+    }
+
+    .demo-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* Buttons */
+    .btn {
+      padding: var(--button-size-md-paddingY) var(--button-size-md-paddingX);
+      border: none;
+      border-radius: var(--button-size-md-borderRadius);
+      font-size: var(--button-size-md-fontSize);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .btn-primary {
+      background: var(--button-variant-primary-bg);
+      color: var(--button-variant-primary-text);
+    }
+
+    .btn-secondary {
+      background: var(--button-variant-secondary-bg);
+      color: var(--button-variant-secondary-text);
+    }
+
+    .btn-ghost {
+      background: var(--button-variant-ghost-bg);
+      color: var(--button-variant-ghost-text);
+      border: 1px solid var(--color-neutral-300);
+    }
+
+    .btn-ghost:hover {
+      background: var(--button-variant-ghost-hover);
+    }
+
+    .btn-danger {
+      background: var(--button-variant-danger-bg);
+      color: var(--button-variant-danger-text);
+    }
+
+    .btn-sm {
+      padding: var(--button-size-sm-paddingY) var(--button-size-sm-paddingX);
+      font-size: var(--button-size-sm-fontSize);
+      border-radius: var(--button-size-sm-borderRadius);
+    }
+
+    .btn-lg {
+      padding: var(--button-size-lg-paddingY) var(--button-size-lg-paddingX);
+      font-size: var(--button-size-lg-fontSize);
+      border-radius: var(--button-size-lg-borderRadius);
+    }
+
+    /* Typography */
+    .typo-h1 {
+      font-size: var(--typography-h1-fontSize);
+      font-weight: var(--typography-h1-fontWeight);
+      line-height: var(--typography-h1-lineHeight);
+    }
+
+    .typo-h2 {
+      font-size: var(--typography-h2-fontSize);
+      font-weight: var(--typography-h2-fontWeight);
+      line-height: var(--typography-h2-lineHeight);
+    }
+
+    .typo-h3 {
+      font-size: var(--typography-h3-fontSize);
+      font-weight: var(--typography-h3-fontWeight);
+      line-height: var(--typography-h3-lineHeight);
+    }
+
+    .typo-title {
+      font-size: var(--typography-title-fontSize);
+      font-weight: var(--typography-title-fontWeight);
+      line-height: var(--typography-title-lineHeight);
+    }
+
+    .typo-body {
+      font-size: var(--typography-body-fontSize);
+      font-weight: var(--typography-body-fontWeight);
+      line-height: var(--typography-body-lineHeight);
+    }
+
+    .typo-body-sm {
+      font-size: var(--typography-bodySm-fontSize);
+      font-weight: var(--typography-bodySm-fontWeight);
+      line-height: var(--typography-bodySm-lineHeight);
+    }
+
+    .typo-caption {
+      font-size: var(--typography-caption-fontSize);
+      font-weight: var(--typography-caption-fontWeight);
+      line-height: var(--typography-caption-lineHeight);
+      color: var(--color-neutral-600);
+    }
+
+    .typo-overline {
+      font-size: var(--typography-overline-fontSize);
+      font-weight: var(--typography-overline-fontWeight);
+      line-height: var(--typography-overline-lineHeight);
+      letter-spacing: var(--typography-overline-letterSpacing);
+      text-transform: uppercase;
+    }
+
+    /* Input */
+    .input {
+      padding: var(--input-size-md-paddingY) var(--input-size-md-paddingX);
+      border: 2px solid var(--input-state-default-borderColor);
+      border-radius: var(--border-radius-md);
+      font-size: var(--input-size-md-fontSize);
+      background: var(--input-state-default-bg);
+      color: var(--input-state-default-text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .input:focus {
+      border-color: var(--input-state-focus-borderColor);
+      box-shadow: 0 0 0 3px var(--input-state-focus-ring);
+    }
+
+    .input-error {
+      border-color: var(--input-state-error-borderColor);
+      color: var(--input-state-error-text);
+    }
+
+    .input-disabled {
+      border-color: var(--input-state-disabled-borderColor);
+      background: var(--input-state-disabled-bg);
+      color: var(--input-state-disabled-text);
+      cursor: not-allowed;
+    }
+
+    /* Badge */
+    .badge {
+      padding: var(--badge-size-md-paddingY) var(--badge-size-md-paddingX);
+      border-radius: var(--badge-size-md-borderRadius);
+      font-size: var(--badge-size-md-fontSize);
+      font-weight: 500;
+    }
+
+    .badge-default {
+      background: var(--badge-variant-default-bg);
+      color: var(--badge-variant-default-text);
+    }
+
+    .badge-success {
+      background: var(--badge-variant-success-bg);
+      color: var(--badge-variant-success-text);
+    }
+
+    .badge-warning {
+      background: var(--badge-variant-warning-bg);
+      color: var(--badge-variant-warning-text);
+    }
+
+    .badge-error {
+      background: var(--badge-variant-error-bg);
+      color: var(--badge-variant-error-text);
+    }
+
+    .badge-sm {
+      padding: var(--badge-size-sm-paddingY) var(--badge-size-sm-paddingX);
+      font-size: var(--badge-size-sm-fontSize);
+      border-radius: var(--badge-size-sm-borderRadius);
+    }
+
+    /* Card */
+    .card {
+      background: white;
+      border-radius: var(--border-radius-lg);
+      padding: var(--spacing-lg);
+      box-shadow: var(--card-elevation-default);
+      max-width: 400px;
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: var(--card-elevation-hover);
+    }
+
+    .card-title {
+      font-size: var(--typography-title-fontSize);
+      font-weight: var(--typography-title-fontWeight);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .card-text {
+      font-size: var(--typography-body-fontSize);
+      color: var(--color-neutral-600);
+    }
+
+    /* Avatar */
+    .avatar {
+      border-radius: var(--border-radius-full);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-primary-base);
+      color: white;
+      font-weight: 600;
+    }
+
+    .avatar-xs {
+      width: var(--avatar-size-xs-width);
+      height: var(--avatar-size-xs-height);
+      font-size: var(--avatar-size-xs-fontSize);
+    }
+
+    .avatar-sm {
+      width: var(--avatar-size-sm-width);
+      height: var(--avatar-size-sm-height);
+      font-size: var(--avatar-size-sm-fontSize);
+    }
+
+    .avatar-md {
+      width: var(--avatar-size-md-width);
+      height: var(--avatar-size-md-height);
+      font-size: var(--avatar-size-md-fontSize);
+    }
+
+    .avatar-lg {
+      width: var(--avatar-size-lg-width);
+      height: var(--avatar-size-lg-height);
+      font-size: var(--avatar-size-lg-fontSize);
+    }
+
+    .avatar-xl {
+      width: var(--avatar-size-xl-width);
+      height: var(--avatar-size-xl-height);
+      font-size: var(--avatar-size-xl-fontSize);
+    }
+
+    /* Status */
+    .status {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .status-online {
+      background: var(--status-online-color);
+    }
+
+    .status-offline {
+      background: var(--status-offline-color);
+    }
+
+    .status-busy {
+      background: var(--status-busy-color);
+    }
+
+    .status-away {
+      background: var(--status-away-color);
+    }
+
+    /* Alert */
+    .alert {
+      padding: var(--spacing-md) var(--spacing-lg);
+      border-radius: var(--border-radius-md);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      max-width: 500px;
+    }
+
+    .alert-info {
+      background: var(--alert-variant-info-bg);
+      color: var(--alert-variant-info-text);
+    }
+
+    .alert-success {
+      background: var(--alert-variant-success-bg);
+      color: var(--alert-variant-success-text);
+    }
+
+    .alert-warning {
+      background: var(--alert-variant-warning-bg);
+      color: var(--alert-variant-warning-text);
+    }
+
+    .alert-error {
+      background: var(--alert-variant-error-bg);
+      color: var(--alert-variant-error-text);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="typo-h1" style="margin-bottom: 2rem;">Design Tokens Demo</h1>
+
+  <!-- Buttons -->
+  <div class="section">
+    <h2>Buttons</h2>
+
+    <div class="subsection">
+      <h3>Variants</h3>
+      <div class="demo-row">
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-ghost">Ghost</button>
+        <button class="btn btn-danger">Danger</button>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Sizes</h3>
+      <div class="demo-row">
+        <button class="btn btn-primary btn-sm">Small</button>
+        <button class="btn btn-primary">Medium</button>
+        <button class="btn btn-primary btn-lg">Large</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Typography -->
+  <div class="section">
+    <h2>Typography</h2>
+    <div style="display: flex; flex-direction: column; gap: 1rem;">
+      <div class="typo-h1">Heading 1 - 3rem</div>
+      <div class="typo-h2">Heading 2 - 2.25rem</div>
+      <div class="typo-h3">Heading 3 - 1.875rem</div>
+      <div class="typo-title">Title - 1.125rem</div>
+      <div class="typo-body">Body text - 1rem</div>
+      <div class="typo-body-sm">Body small - 0.875rem</div>
+      <div class="typo-caption">Caption text - 0.75rem</div>
+      <div class="typo-overline">Overline text - 0.75rem</div>
+    </div>
+  </div>
+
+  <!-- Inputs -->
+  <div class="section">
+    <h2>Inputs</h2>
+    <div class="subsection">
+      <h3>States</h3>
+      <div class="demo-row" style="align-items: flex-start;">
+        <div>
+          <div class="typo-caption" style="margin-bottom: 0.25rem;">Default</div>
+          <input type="text" class="input" placeholder="Enter text...">
+        </div>
+        <div>
+          <div class="typo-caption" style="margin-bottom: 0.25rem;">Focus</div>
+          <input type="text" class="input" value="Focused state" style="border-color: var(--input-state-focus-borderColor); box-shadow: 0 0 0 3px var(--input-state-focus-ring);">
+        </div>
+        <div>
+          <div class="typo-caption" style="margin-bottom: 0.25rem;">Error</div>
+          <input type="text" class="input input-error" value="Error state">
+        </div>
+        <div>
+          <div class="typo-caption" style="margin-bottom: 0.25rem;">Disabled</div>
+          <input type="text" class="input input-disabled" value="Disabled" disabled>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Badges -->
+  <div class="section">
+    <h2>Badges</h2>
+
+    <div class="subsection">
+      <h3>Variants</h3>
+      <div class="demo-row">
+        <span class="badge badge-default">Default</span>
+        <span class="badge badge-success">Success</span>
+        <span class="badge badge-warning">Warning</span>
+        <span class="badge badge-error">Error</span>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Sizes</h3>
+      <div class="demo-row">
+        <span class="badge badge-primary badge-sm">Small</span>
+        <span class="badge badge-primary">Medium</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card -->
+  <div class="section">
+    <h2>Card</h2>
+    <div class="demo-row">
+      <div class="card">
+        <div class="card-title">Card Title</div>
+        <div class="card-text">This is a card component demonstrating the design tokens for elevation and spacing.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Avatar -->
+  <div class="section">
+    <h2>Avatar</h2>
+    <div class="demo-row">
+      <div class="avatar avatar-xs">A</div>
+      <div class="avatar avatar-sm">A</div>
+      <div class="avatar avatar-md">A</div>
+      <div class="avatar avatar-lg">A</div>
+      <div class="avatar avatar-xl">A</div>
+    </div>
+  </div>
+
+  <!-- Status -->
+  <div class="section">
+    <h2>Status Indicators</h2>
+    <div class="demo-row">
+      <div>
+        <span class="status status-online"></span>
+        <span style="margin-left: 0.5rem; font-size: var(--typography-bodySm-fontSize);">Online</span>
+      </div>
+      <div>
+        <span class="status status-offline"></span>
+        <span style="margin-left: 0.5rem; font-size: var(--typography-bodySm-fontSize);">Offline</span>
+      </div>
+      <div>
+        <span class="status status-busy"></span>
+        <span style="margin-left: 0.5rem; font-size: var(--typography-bodySm-fontSize);">Busy</span>
+      </div>
+      <div>
+        <span class="status status-away"></span>
+        <span style="margin-left: 0.5rem; font-size: var(--typography-bodySm-fontSize);">Away</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alert -->
+  <div class="section">
+    <h2>Alerts</h2>
+    <div style="display: flex; flex-direction: column; gap: 1rem;">
+      <div class="alert alert-info">
+        <strong>Info:</strong> This is an informational alert message.
+      </div>
+      <div class="alert alert-success">
+        <strong>Success:</strong> Your action was completed successfully.
+      </div>
+      <div class="alert alert-warning">
+        <strong>Warning:</strong> Please review this information carefully.
+      </div>
+      <div class="alert alert-error">
+        <strong>Error:</strong> Something went wrong. Please try again.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
