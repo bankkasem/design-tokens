@@ -1,0 +1,14 @@
+{
+  "name": "design-tokens",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
