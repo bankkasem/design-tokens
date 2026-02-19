@@ -86,11 +86,17 @@ No lint or typecheck scripts are currently configured. Add them to package.json 
 
 ## Project Structure
 
-- `index.ts` - Entry point
-- `package.json` - Dependencies and scripts
-- `tsconfig.json` - TypeScript configuration
-- `CLAUDE.md` - Additional development guidelines
-- `AGENTS.md` - This file
+See [README.md](README.md) for complete project structure overview and token documentation.
+
+Key files:
+- `tokens/` - JSON token definitions (color, typography, components, etc.)
+- `scripts/` - Build scripts for token transformation
+- `dist/` - Generated output (CSS variables, etc.)
+- `docs/` - Project documentation
+  - `FLOW.md` - Architecture notes and setup guide
+  - `TODO.md` - Project roadmap
+- `index.ts` - Main entry point for token exports
+- `AGENTS.md` - This file - Development guidelines
 
 ## Notes
 
