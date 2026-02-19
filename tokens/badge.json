@@ -1,0 +1,36 @@
+{
+  "badge": {
+    "variant": {
+      "default": {
+        "bg": "color.neutral.200",
+        "text": "color.neutral.900"
+      },
+      "success": {
+        "bg": "color.success.base",
+        "text": "color.neutral.50"
+      },
+      "warning": {
+        "bg": "#f59e0b",
+        "text": "color.neutral.900"
+      },
+      "error": {
+        "bg": "color.danger.base",
+        "text": "color.neutral.50"
+      }
+    },
+    "size": {
+      "sm": {
+        "paddingX": "spacing.xs",
+        "paddingY": "0.125rem",
+        "fontSize": "typography.caption.fontSize",
+        "borderRadius": "border.radius.full"
+      },
+      "md": {
+        "paddingX": "spacing.sm",
+        "paddingY": "spacing.xs",
+        "fontSize": "typography.bodySm.fontSize",
+        "borderRadius": "border.radius.full"
+      }
+    }
+  }
+}

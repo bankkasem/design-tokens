@@ -1,0 +1,41 @@
+{
+  "input": {
+    "state": {
+      "default": {
+        "borderColor": "color.neutral.300",
+        "bg": "color.neutral.50",
+        "text": "color.neutral.900"
+      },
+      "focus": {
+        "borderColor": "color.primary.base",
+        "ring": "color.primary.base"
+      },
+      "error": {
+        "borderColor": "color.danger.base",
+        "text": "color.danger.base"
+      },
+      "disabled": {
+        "borderColor": "color.neutral.200",
+        "bg": "color.neutral.100",
+        "text": "color.neutral.400"
+      }
+    },
+    "size": {
+      "sm": {
+        "paddingX": "spacing.sm",
+        "paddingY": "spacing.xs",
+        "fontSize": "typography.bodySm.fontSize"
+      },
+      "md": {
+        "paddingX": "spacing.md",
+        "paddingY": "spacing.sm",
+        "fontSize": "typography.body.fontSize"
+      },
+      "lg": {
+        "paddingX": "spacing.lg",
+        "paddingY": "spacing.md",
+        "fontSize": "typography.title.fontSize"
+      }
+    }
+  }
+}

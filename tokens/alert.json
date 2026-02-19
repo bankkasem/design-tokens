@@ -1,0 +1,26 @@
+{
+  "alert": {
+    "variant": {
+      "info": {
+        "bg": "color.primary.base",
+        "text": "color.neutral.50",
+        "icon": "color.neutral.50"
+      },
+      "success": {
+        "bg": "color.success.base",
+        "text": "color.neutral.50",
+        "icon": "color.neutral.50"
+      },
+      "warning": {
+        "bg": "#f59e0b",
+        "text": "color.neutral.900",
+        "icon": "color.neutral.900"
+      },
+      "error": {
+        "bg": "color.danger.base",
+        "text": "color.neutral.50",
+        "icon": "color.neutral.50"
+      }
+    }
+  }
+}

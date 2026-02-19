@@ -1,0 +1,31 @@
+{
+  "avatar": {
+    "size": {
+      "xs": {
+        "width": "1.5rem",
+        "height": "1.5rem",
+        "fontSize": "typography.caption.fontSize"
+      },
+      "sm": {
+        "width": "2rem",
+        "height": "2rem",
+        "fontSize": "typography.bodySm.fontSize"
+      },
+      "md": {
+        "width": "2.5rem",
+        "height": "2.5rem",
+        "fontSize": "typography.body.fontSize"
+      },
+      "lg": {
+        "width": "3rem",
+        "height": "3rem",
+        "fontSize": "typography.title.fontSize"
+      },
+      "xl": {
+        "width": "4rem",
+        "height": "4rem",
+        "fontSize": "typography.h4.fontSize"
+      }
+    }
+  }
+}

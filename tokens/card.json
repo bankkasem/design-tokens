@@ -1,0 +1,8 @@
+{
+  "card": {
+    "elevation": {
+      "default": "shadow.md",
+      "hover": "shadow.lg"
+    }
+  }
+}

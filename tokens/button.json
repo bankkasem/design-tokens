@@ -1,0 +1,46 @@
+{
+  "button": {
+    "variant": {
+      "primary": {
+        "bg": "color.primary.base",
+        "hover": "color.primary.hover",
+        "text": "color.neutral.50"
+      },
+      "secondary": {
+        "bg": "color.secondary.base",
+        "hover": "color.secondary.hover",
+        "text": "color.neutral.50"
+      },
+      "ghost": {
+        "bg": "transparent",
+        "hover": "color.neutral.200",
+        "text": "color.neutral.900"
+      },
+      "danger": {
+        "bg": "color.danger.base",
+        "hover": "color.danger.hover",
+        "text": "color.neutral.50"
+      }
+    },
+    "size": {
+      "sm": {
+        "paddingX": "spacing.sm",
+        "paddingY": "spacing.xs",
+        "fontSize": "typography.bodySm.fontSize",
+        "borderRadius": "border.radius.md"
+      },
+      "md": {
+        "paddingX": "spacing.md",
+        "paddingY": "spacing.sm",
+        "fontSize": "typography.body.fontSize",
+        "borderRadius": "border.radius.md"
+      },
+      "lg": {
+        "paddingX": "spacing.lg",
+        "paddingY": "spacing.md",
+        "fontSize": "typography.title.fontSize",
+        "borderRadius": "border.radius.lg"
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "fontFamily": {
+    "display": "var(--font-display)",
+    "body": "var(--font-body)",
+    "code": "var(--font-code)",
+    "button": "var(--font-body)"
+  }
+}
