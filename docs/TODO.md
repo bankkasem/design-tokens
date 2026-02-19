@@ -2,6 +2,8 @@
 
 ## 📋 Current Tasks
 
+- [ ] Add `background` and `foreground` for app
+- [ ] Support Dark Theme
 - [ ] Publish to NPM
 
 ---
