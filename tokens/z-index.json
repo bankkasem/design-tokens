@@ -1,0 +1,12 @@
+{
+  "zIndex": {
+    "hide": "-1",
+    "base": "0",
+    "dropdown": "10",
+    "sticky": "20",
+    "fixed": "30",
+    "modal": "40",
+    "popover": "50",
+    "tooltip": "60"
+  }
+}
