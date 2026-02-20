@@ -7,12 +7,12 @@
         "text": "color.neutral.900"
       },
       "focus": {
-        "borderColor": "color.primary.base",
-        "ring": "color.primary.base"
+        "borderColor": "color.primary.500",
+        "ring": "color.primary.500"
       },
       "error": {
-        "borderColor": "color.danger.base",
-        "text": "color.danger.base"
+        "borderColor": "color.danger.500",
+        "text": "color.danger.500"
       },
       "disabled": {
         "borderColor": "color.neutral.200",

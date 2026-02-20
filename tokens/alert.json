@@ -2,22 +2,22 @@
   "alert": {
     "variant": {
       "info": {
-        "bg": "color.primary.base",
+        "bg": "color.primary.500",
         "text": "color.neutral.50",
         "icon": "color.neutral.50"
       },
       "success": {
-        "bg": "color.success.base",
+        "bg": "color.success.500",
         "text": "color.neutral.50",
         "icon": "color.neutral.50"
       },
       "warning": {
-        "bg": "#f59e0b",
+        "bg": "color.warning.500",
         "text": "color.neutral.900",
         "icon": "color.neutral.900"
       },
       "error": {
-        "bg": "color.danger.base",
+        "bg": "color.danger.500",
         "text": "color.neutral.50",
         "icon": "color.neutral.50"
       }

@@ -1,16 +1,16 @@
 {
   "status": {
     "online": {
-      "color": "color.success.base"
+      "color": "color.success.500"
     },
     "offline": {
       "color": "color.neutral.400"
     },
     "busy": {
-      "color": "color.danger.base"
+      "color": "color.danger.500"
     },
     "away": {
-      "color": "#f59e0b"
+      "color": "color.warning.500"
     }
   }
 }

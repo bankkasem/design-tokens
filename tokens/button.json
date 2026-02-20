@@ -2,13 +2,13 @@
   "button": {
     "variant": {
       "primary": {
-        "bg": "color.primary.base",
-        "hover": "color.primary.hover",
+        "bg": "color.primary.500",
+        "hover": "color.primary.600",
         "text": "color.neutral.50"
       },
       "secondary": {
-        "bg": "color.secondary.base",
-        "hover": "color.secondary.hover",
+        "bg": "color.secondary.500",
+        "hover": "color.secondary.600",
         "text": "color.neutral.50"
       },
       "ghost": {
@@ -17,8 +17,8 @@
         "text": "color.neutral.900"
       },
       "danger": {
-        "bg": "color.danger.base",
-        "hover": "color.danger.hover",
+        "bg": "color.danger.500",
+        "hover": "color.danger.700",
         "text": "color.neutral.50"
       }
     },
