@@ -19,9 +19,9 @@ bun install
 ```typescript
 import { tokens } from "design-tokens";
 
-console.log(tokens.color.primary.base); // #007bff
+console.log(tokens.color.primary[500]); // #007bff
 console.log(tokens.typography.h1.fontSize); // 3rem
-console.log(tokens.button.variant.primary.bg); // var(--color-primary-base)
+console.log(tokens.button.variant.primary.bg); // var(--color-primary-500)
 ```
 
 ### Generate CSS Variables
@@ -36,8 +36,9 @@ This generates `dist/tokens.css` with all CSS variables:
 
 ```css
 :root {
-  --color-primary-base: #007bff;
-  --color-primary-hover: #0056b3;
+  --color-primary-500: #007bff;
+  --color-primary-600: #0056b3;
+  --color-primary-700: #004494;
   --typography-h1-fontSize: 3rem;
   /* ... */
 }
@@ -64,7 +65,7 @@ Or in CSS:
 
 ### Core Tokens
 
-- **Color** - Brand colors (primary, secondary, success, danger) and neutral palette
+- **Color** - Brand colors (primary, secondary, success, danger, warning) with numeric scales (50–900)
 - **Z-Index** - Layer stacking values
 - **Spacing** - Consistent spacing scale
 - **Border** - Border radius values
